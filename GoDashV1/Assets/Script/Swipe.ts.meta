@@ -1,0 +1,59 @@
+fileFormatVersion: 2
+guid: d0c29e1b2eedec7418764a9e5b28615e
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass Swipe extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    //getter\r\n    SwipeDelta() {\r\n        return this.swipeDelta;\r\n   
+    }\r\n    SwipeLeft() {\r\n        return this.swipeLeft;\r\n    }\r\n    SwipeRight()
+    {\r\n        return this.swipeRight;\r\n    }\r\n    SwipeUp() {\r\n        return
+    this.swipeUp;\r\n    }\r\n    SwipeDown() {\r\n        return this.swipeDown;\r\n   
+    }\r\n    Update() {\r\n        this.tap = false;\r\n        this.swipeLeft =
+    false;\r\n        this.swipeRight = false;\r\n        this.swipeUp = false;\r\n       
+    this.swipeDown = false;\r\n        //#region mouseInput\r\n        if (UnityEngine_1.Input.GetMouseButtonDown(0))
+    {\r\n            this.tap = true;\r\n            this.isDraging = true;\r\n           
+    this.startTouch = new UnityEngine_1.Vector2(UnityEngine_1.Input.mousePosition.x,
+    UnityEngine_1.Input.mousePosition.y);\r\n        }\r\n        else if (UnityEngine_1.Input.GetMouseButtonUp(0))
+    {\r\n            this.isDraging = false;\r\n            this.Reset();\r\n       
+    }\r\n        //#endregion\r\n        // mobileInput\r\n        if (UnityEngine_1.Input.touches.length
+    > 0) {\r\n            if (UnityEngine_1.Input.touches[0].phase == UnityEngine_1.TouchPhase.Began)
+    {\r\n                this.tap = true;\r\n                this.isDraging = true;\r\n               
+    this.startTouch = UnityEngine_1.Input.touches[0].position;\r\n            }\r\n           
+    else if (UnityEngine_1.Input.touches[0].phase == UnityEngine_1.TouchPhase.Ended
+    ||\r\n                UnityEngine_1.Input.touches[0].phase == UnityEngine_1.TouchPhase.Canceled)
+    {\r\n                this.isDraging = false;\r\n                this.Reset();\r\n           
+    }\r\n        }\r\n        this.swipeDelta = UnityEngine_1.Vector2.zero;\r\n       
+    if (this.isDraging) {\r\n            if (UnityEngine_1.Input.touches.length >
+    0) {\r\n                this.swipeDelta = UnityEngine_1.Vector2.op_Subtraction(UnityEngine_1.Input.touches[0].position,
+    this.startTouch);\r\n            }\r\n            else if (UnityEngine_1.Input.GetMouseButton(0))
+    {\r\n                this.swipeDelta = new UnityEngine_1.Vector2(UnityEngine_1.Input.mousePosition.x
+    - this.startTouch.x, UnityEngine_1.Input.mousePosition.y - this.startTouch.y);\r\n           
+    }\r\n        }\r\n        if (this.swipeDelta.magnitude > 20) {\r\n           
+    let x = this.swipeDelta.x;\r\n            let y = this.swipeDelta.y;\r\n           
+    if (UnityEngine_1.Mathf.Abs(x) > UnityEngine_1.Mathf.Abs(y)) {\r\n               
+    if (x < 0) {\r\n                    this.swipeLeft = true;\r\n               
+    }\r\n                else {\r\n                    this.swipeRight = true;\r\n               
+    }\r\n            }\r\n            else {\r\n                if (y < 0) {\r\n                   
+    this.swipeDown = true;\r\n                }\r\n                else {\r\n                   
+    this.swipeUp = true;\r\n                }\r\n            }\r\n            //console.log(this.swipeLeft);\r\n           
+    this.Reset();\r\n        }\r\n    }\r\n    Reset() {\r\n        this.startTouch
+    = UnityEngine_1.Vector2.zero;\r\n        this.swipeDelta = UnityEngine_1.Vector2.zero;\r\n       
+    this.isDraging = false;\r\n    }\r\n}\r\nexports.default = Swipe;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU3dpcGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJTd2lwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUF5RTtBQUN6RSxpREFBc0Q7QUFFdEQsTUFBcUIsS0FBTSxTQUFRLHFDQUFxQjtJQVV0RCxRQUFRO0lBQ0QsVUFBVTtRQUNmLE9BQU8sSUFBSSxDQUFDLFVBQVUsQ0FBQztJQUN6QixDQUFDO0lBQ00sU0FBUztRQUNkLE9BQU8sSUFBSSxDQUFDLFNBQVMsQ0FBQztJQUN4QixDQUFDO0lBQ00sVUFBVTtRQUNmLE9BQU8sSUFBSSxDQUFDLFVBQVUsQ0FBQztJQUN6QixDQUFDO0lBQ00sT0FBTztRQUNaLE9BQU8sSUFBSSxDQUFDLE9BQU8sQ0FBQztJQUN0QixDQUFDO0lBQ00sU0FBUztRQUNkLE9BQU8sSUFBSSxDQUFDLFNBQVMsQ0FBQztJQUN4QixDQUFDO0lBRUQsTUFBTTtRQUNKLElBQUksQ0FBQyxHQUFHLEdBQUcsS0FBSyxDQUFDO1FBQ2pCLElBQUksQ0FBQyxTQUFTLEdBQUcsS0FBSyxDQUFDO1FBQ3ZCLElBQUksQ0FBQyxVQUFVLEdBQUcsS0FBSyxDQUFDO1FBQ3hCLElBQUksQ0FBQyxPQUFPLEdBQUcsS0FBSyxDQUFDO1FBQ3JCLElBQUksQ0FBQyxTQUFTLEdBQUcsS0FBSyxDQUFDO1FBRXZCLG9CQUFvQjtRQUNwQixJQUFJLG1CQUFLLENBQUMsa0JBQWtCLENBQUMsQ0FBQyxDQUFDLEVBQUU7WUFDL0IsSUFBSSxDQUFDLEdBQUcsR0FBRyxJQUFJLENBQUM7WUFDaEIsSUFBSSxDQUFDLFNBQVMsR0FBRyxJQUFJLENBQUM7WUFDdEIsSUFBSSxDQUFDLFVBQVUsR0FBRyxJQUFJLHFCQUFPLENBQUMsbUJBQUssQ0FBQyxhQUFhLENBQUMsQ0FBQyxFQUFFLG1CQUFLLENBQUMsYUFBYSxDQUFDLENBQUMsQ0FBQyxDQUFDO1NBQzdFO2FBQU0sSUFBSSxtQkFBSyxDQUFDLGdCQUFnQixDQUFDLENBQUMsQ0FBQyxFQUFF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","assetPath":"Assets/Script/Swipe.ts","manifest":{"properties":[],"name":"Swipe","description":""},"isCompiled":true}'
+  typescriptHash: 7b804602ca5b97d23ebc39bca66e9498

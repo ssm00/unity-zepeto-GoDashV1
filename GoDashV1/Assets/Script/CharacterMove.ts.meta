@@ -1,0 +1,96 @@
+fileFormatVersion: 2
+guid: 56c07a4b68c6c7543bd1acbd672963e7
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nvar __decorate = (this && this.__decorate)
+    || function (decorators, target, key, desc) {\r\n    var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target,
+    key) : desc, d;\r\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate
+    === \"function\") r = Reflect.decorate(decorators, target, key, desc);\r\n   
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i])
+    r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\r\n   
+    return c > 3 && r && Object.defineProperty(target, key, r), r;\r\n};\r\nObject.defineProperty(exports,
+    \"__esModule\", { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Manager_1 = require(\"./Manager\");\r\nconst
+    PlayerAudio_1 = require(\"./PlayerAudio\");\r\nconst Swipe_1 = require(\"./Swipe\");\r\nvar
+    SIDE;\r\n(function (SIDE) {\r\n    SIDE[SIDE[\"Left\"] = -2.2] = \"Left\";\r\n   
+    SIDE[SIDE[\"Mid\"] = 0] = \"Mid\";\r\n    SIDE[SIDE[\"Right\"] = 2.2] = \"Right\";\r\n})(SIDE
+    || (SIDE = {}));\r\nclass CharacterMove extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    constructor() {\r\n        super(...arguments);\r\n        //side\r\n       
+    this.m_Side = SIDE.Mid;\r\n        this.y = 1;\r\n        this.fallingState =
+    false;\r\n        //power\r\n        this.fwdSpeed = 0;\r\n        this.jumpPower
+    = 35;\r\n    }\r\n    setFwdSpeed(speed) {\r\n        this.fwdSpeed = speed;\r\n   
+    }\r\n    static GetMoveInstance() {\r\n        return this.charaterMoveInstance;\r\n   
+    }\r\n    Awake() {\r\n        CharacterMove.charaterMoveInstance = this;\r\n   
+    }\r\n    ResetSide() {\r\n        this.m_Side = SIDE.Mid;\r\n    }\r\n    Start()
+    {\r\n        this.m_controller = this.gameObject.GetComponent($typeof(UnityEngine_1.CharacterController));\r\n       
+    this.m_animator = this.gameObject.GetComponentInChildren($typeof(UnityEngine_1.Animator));\r\n       
+    this.m_swipeInput = this.gameObject.AddComponent($typeof(Swipe_1.default));\r\n       
+    this.m_collider = this.gameObject.GetComponent($typeof(UnityEngine_1.CapsuleCollider));\r\n       
+    this.playerSound = PlayerAudio_1.default.GetSoundInstance();\r\n        this.manager
+    = Manager_1.default.GetInstance();\r\n    }\r\n    Update() {\r\n        this.CharacterMove();\r\n   
+    }\r\n    CharacterMove() {\r\n        if (!this.manager.GetAlive() || !this.manager.SwipeOk())
+    {\r\n            return;\r\n        }\r\n        this.m_controller.Move(new UnityEngine_1.Vector3(0,
+    0, this.fwdSpeed * UnityEngine_1.Time.deltaTime));\r\n        if (this.m_swipeInput.SwipeLeft()
+    && !this.inRoll) {\r\n            if (this.m_Side == SIDE.Mid) {\r\n               
+    this.lastSide = this.m_Side;\r\n                this.m_Side = SIDE.Left;\r\n               
+    this.m_animator.Play(\"Dodging\");\r\n                this.playerSound.PlaySwipeSound();\r\n           
+    }\r\n            else if (this.m_Side == SIDE.Right) {\r\n                this.lastSide
+    = this.m_Side;\r\n                this.m_Side = SIDE.Mid;\r\n               
+    this.m_animator.Play(\"Dodging\");\r\n                this.playerSound.PlaySwipeSound();\r\n           
+    }\r\n            else {\r\n                this.lastSide = this.m_Side;\r\n           
+    }\r\n        }\r\n        else if (this.m_swipeInput.SwipeRight() && !this.inRoll)
+    {\r\n            if (this.m_Side == SIDE.Mid) {\r\n                this.lastSide
+    = this.m_Side;\r\n                this.m_Side = SIDE.Right;\r\n               
+    this.m_animator.Play(\"Dodging\");\r\n                this.playerSound.PlaySwipeSound();\r\n           
+    }\r\n            else if (this.m_Side == SIDE.Left) {\r\n                this.lastSide
+    = this.m_Side;\r\n                this.m_Side = SIDE.Mid;\r\n               
+    this.m_animator.Play(\"Dodging\");\r\n                this.playerSound.PlaySwipeSound();\r\n           
+    }\r\n            else {\r\n                this.lastSide = this.m_Side;\r\n           
+    }\r\n        }\r\n        this.x = UnityEngine_1.Mathf.Lerp(this.transform.position.x,
+    this.m_Side, UnityEngine_1.Time.deltaTime * 10);\r\n        this.m_controller.Move(new
+    UnityEngine_1.Vector3(this.x - this.transform.position.x, this.y * UnityEngine_1.Time.deltaTime,
+    0));\r\n        this.Jump();\r\n        this.Roll();\r\n    }\r\n    CheckGround()
+    {\r\n        let isGround;\r\n        let ray = this.m_controller.transform.position;\r\n       
+    let ref = $ref();\r\n        if (UnityEngine_1.Physics.Raycast(ray, UnityEngine_1.Vector3.down,
+    ref, 0.01)) {\r\n            isGround = true;\r\n        }\r\n        else {\r\n           
+    isGround = false;\r\n        }\r\n        return isGround;\r\n    }\r\n    Jump()
+    {\r\n        if (this.m_controller.isGrounded) {\r\n            if (this.fallingState
+    == true) {\r\n                this.inJump = false;\r\n                this.fallingState
+    = false;\r\n            }\r\n            if (this.m_swipeInput.SwipeUp()) {\r\n               
+    this.playerSound.PlayJumpSound();\r\n                this.y = this.jumpPower;\r\n               
+    this.m_animator.CrossFadeInFixedTime(\"Jump\", 0.1);\r\n                this.inJump
+    = true;\r\n            }\r\n        }\r\n        else {\r\n            this.y
+    -= this.jumpPower * 2 * UnityEngine_1.Time.deltaTime;\r\n            this.fallingState
+    = true;\r\n        }\r\n    }\r\n    Roll() {\r\n        this.rollCounter -=
+    UnityEngine_1.Time.deltaTime;\r\n        if (this.rollCounter <= 0) {\r\n           
+    this.m_controller.center = new UnityEngine_1.Vector3(0, 0.6, 0);\r\n           
+    this.m_controller.height = 1.2;\r\n            this.m_collider.center = new UnityEngine_1.Vector3(0,
+    0.6, 0);\r\n            this.m_collider.height = 1.2;\r\n            this.rollCounter
+    = 0;\r\n            this.inRoll = false;\r\n        }\r\n        if (this.m_swipeInput.SwipeDown()
+    && !this.inJump) {\r\n            this.playerSound.PlayJumpSound();\r\n           
+    this.rollCounter = 1;\r\n            this.m_controller.center = new UnityEngine_1.Vector3(0,
+    0.2, 0);\r\n            this.m_controller.height = 0.4;\r\n            this.m_collider.center
+    = new UnityEngine_1.Vector3(0, 0.2, 0);\r\n            this.m_collider.height
+    = 0.4;\r\n            this.m_animator.Play(\"Roll\");\r\n            this.inRoll
+    = true;\r\n            this.inJump = false;\r\n        }\r\n    }\r\n    RewindSide()
+    {\r\n        this.m_Side = this.lastSide;\r\n    }\r\n}\r\nCharacterMove.charaterMoveInstance
+    = null;\r\n__decorate([], CharacterMove.prototype, \"fwdSpeed\", void 0);\r\nexports.default
+    = CharacterMove;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2hhcmFjdGVyTW92ZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNoYXJhY3Rlck1vdmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQSw2Q0FjcUI7QUFDckIsaURBQXNEO0FBQ3RELHVDQUFnQztBQUNoQywrQ0FBd0M7QUFDeEMsbUNBQTRCO0FBRTVCLElBQUssSUFJSjtBQUpELFdBQUssSUFBSTtJQUNQLGtDQUFXLENBQUE7SUFDWCw2QkFBTyxDQUFBO0lBQ1AsbUNBQVcsQ0FBQTtBQUNiLENBQUMsRUFKSSxJQUFJLEtBQUosSUFBSSxRQUlSO0FBRUQsTUFBcUIsYUFBYyxTQUFRLHFDQUFxQjtJQUFoRTs7UUFXRSxNQUFNO1FBQ0UsV0FBTSxHQUFTLElBQUksQ0FBQyxHQUFHLENBQUM7UUFTeEIsTUFBQyxHQUFXLENBQUMsQ0FBQztRQUlkLGlCQUFZLEdBQVksS0FBSyxDQUFDO1FBRXRDLE9BQU87UUFFQSxhQUFRLEdBQVcsQ0FBQyxDQUFDO1FBQ3JCLGNBQVMsR0FBVyxFQUFFLENBQUM7SUFrSWhDLENBQUM7SUFoSVEsV0FBVyxDQUFDLEtBQWE7UUFDOUIsSUFBSSxDQUFDLFFBQVEsR0FBRyxLQUFLLENBQUM7SUFDeEIsQ0FBQztJQUlNLE1BQU0sQ0FBQyxlQUFlO1FBQzNCLE9BQU8sSUFBSSxDQUFDLG9CQUFvQixDQUFDO0lBQ25DLENBQUM7SUFDRCxLQUFLO1FBQ0gsYUFBYSxDQUFDLG9CQUFvQixHQUFHLElBQUksQ0FBQztJQUM1QyxDQUFDO0lBRUQsU0FBUztRQUNQLElBQUksQ0FBQyxNQUFNLEdBQUcsSUFBSSxDQUFDLEdBQUcsQ0FBQztJQUN6QixDQUFDO0lBRUQsS0FBSztRQUNILElBQUksQ0FBQyxZQUFZLEdBQUcsSUFBSSxDQUFDLFVBQVUsQ0FBQyxZQUFZLFNBQUMsaUNBQW1CLEVBQUcsQ0FBQztRQUN4RSxJQUFJLENBQUMsVUFBVSxHQUFHLElBQUksQ0FBQyxVQUFVLENBQUMsc0JBQXNCLFNBQUMsc0JB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","assetPath":"Assets/Script/CharacterMove.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"fwdSpeed","type":"System.Single","isArray":false,"initValue":["0"],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]},{"assembly":"mscorlib","name":"jumpPower","type":"System.Single","isArray":false,"initValue":["35"],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"CharacterMove","description":""},"isCompiled":true}'
+  typescriptHash: a96d2cabccd64da38305810fe01b193c

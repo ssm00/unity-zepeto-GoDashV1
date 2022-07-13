@@ -128,6 +128,22 @@
       },
       "url": "https://upm.zepeto.run"
     },
+    "zepeto.buildit.common": {
+      "version": "1.0.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "zepeto.character": "3.1.4"
+      },
+      "url": "https://upm.zepeto.run"
+    },
+    "zepeto.buildit.loader": {
+      "version": "0.0.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://upm.zepeto.run"
+    },
     "zepeto.character": {
       "version": "3.1.12",
       "depth": 1,

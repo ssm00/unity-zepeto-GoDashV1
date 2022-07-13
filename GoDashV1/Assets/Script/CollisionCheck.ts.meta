@@ -1,0 +1,95 @@
+fileFormatVersion: 2
+guid: 92a28ad6d7dd755468922a01906fb7f6
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nconst CharacterMove_1
+    = require(\\\"./CharacterMove\\\");\\r\\nconst GameOverScore_1 = require(\\\"./GameOverScore\\\");\\r\\nconst
+    Manager_1 = require(\\\"./Manager\\\");\\r\\nconst PlayerAudio_1 = require(\\\"./PlayerAudio\\\");\\r\\nvar
+    HitX;\\r\\n(function (HitX) {\\r\\n    HitX[HitX[\\\"Left\\\"] = 0] = \\\"Left\\\";\\r\\n   
+    HitX[HitX[\\\"Mid\\\"] = 1] = \\\"Mid\\\";\\r\\n    HitX[HitX[\\\"Right\\\"]
+    = 2] = \\\"Right\\\";\\r\\n    HitX[HitX[\\\"None\\\"] = 3] = \\\"None\\\";\\r\\n})(HitX
+    || (HitX = {}));\\r\\nvar HitY;\\r\\n(function (HitY) {\\r\\n    HitY[HitY[\\\"Top\\\"]
+    = 0] = \\\"Top\\\";\\r\\n    HitY[HitY[\\\"Mid\\\"] = 1] = \\\"Mid\\\";\\r\\n   
+    HitY[HitY[\\\"Bottom\\\"] = 2] = \\\"Bottom\\\";\\r\\n    HitY[HitY[\\\"None\\\"]
+    = 3] = \\\"None\\\";\\r\\n})(HitY || (HitY = {}));\\r\\nvar HitZ;\\r\\n(function
+    (HitZ) {\\r\\n    HitZ[HitZ[\\\"Foward\\\"] = 0] = \\\"Foward\\\";\\r\\n    HitZ[HitZ[\\\"Mid\\\"]
+    = 1] = \\\"Mid\\\";\\r\\n    HitZ[HitZ[\\\"Backward\\\"] = 2] = \\\"Backward\\\";\\r\\n   
+    HitZ[HitZ[\\\"None\\\"] = 3] = \\\"None\\\";\\r\\n})(HitZ || (HitZ = {}));\\r\\nclass
+    CollisionCheck extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    constructor()
+    {\\r\\n        super(...arguments);\\r\\n        //hit\\r\\n        this.hitX
+    = HitX.None;\\r\\n        this.hitY = HitY.None;\\r\\n        this.hitZ = HitZ.None;\\r\\n   
+    }\\r\\n    Start() {\\r\\n        this.m_Controller = this.gameObject.GetComponent($typeof(UnityEngine_1.CharacterController));\\r\\n       
+    this.m_Animator = this.gameObject.GetComponentInChildren($typeof(UnityEngine_1.Animator));\\r\\n       
+    //Script \uB294 getcomponent\uB85C \uC548\uAC00\uC838\uC640\uC9D0.. this.gameObject.Getcomponenet<CollisionCheck>()
+    \uC81C\uD398\uD1A0\uC5D0\uC11C\uB9CC \uC624\uB958\\r\\n        this.m_moveScript
+    = CharacterMove_1.default.GetMoveInstance();\\r\\n        this.manger = Manager_1.default.GetInstance();\\r\\n       
+    this.playerSound = PlayerAudio_1.default.GetSoundInstance();\\r\\n        this.gameOverScore
+    = GameOverScore_1.default.GetInstance();\\r\\n    }\\r\\n    OnCollisionEnter(col)
+    {\\r\\n        if (col.transform.tag == \\\"Player\\\" || col.transform.tag ==
+    \\\"Ground\\\" || col.transform.tag == \\\"Ignore\\\") {\\r\\n            return;\\r\\n       
+    }\\r\\n        let hitX = this.GetHitX(col.collider);\\r\\n        let hitY =
+    this.GetHitY(col.collider);\\r\\n        let hitZ = this.GetHitZ(col.collider);\\r\\n       
+    this.Death(hitY, hitZ);\\r\\n        this.SideHit(hitX, hitZ, hitY);\\r\\n   
+    }\\r\\n    GetHitX(col) {\\r\\n        let Charater_bound = this.m_Controller.bounds;\\r\\n       
+    let Collider_bound = col.bounds;\\r\\n        let minX = UnityEngine_1.Mathf.Max(Charater_bound.min.x,
+    Collider_bound.min.x);\\r\\n        let maxX = UnityEngine_1.Mathf.Min(Charater_bound.max.x,
+    Collider_bound.max.x);\\r\\n        let average = (minX + maxX) / 2 - Collider_bound.min.x;\\r\\n       
+    let hitx;\\r\\n        if (average > Collider_bound.size.x - 0.3) {\\r\\n           
+    hitx = HitX.Right;\\r\\n        }\\r\\n        else if (average < 0.3) {\\r\\n           
+    hitx = HitX.Left;\\r\\n        }\\r\\n        else {\\r\\n            hitx =
+    HitX.Mid;\\r\\n        }\\r\\n        return hitx;\\r\\n    }\\r\\n    GetHitY(col)
+    {\\r\\n        let Charater_bound = this.m_Controller.bounds;\\r\\n        let
+    Collider_bound = col.bounds;\\r\\n        let minY = UnityEngine_1.Mathf.Max(Charater_bound.min.y,
+    Collider_bound.min.y);\\r\\n        let maxY = UnityEngine_1.Mathf.Min(Charater_bound.max.y,
+    Collider_bound.max.y);\\r\\n        let average = ((minY + maxY) / 2 - Charater_bound.min.y)
+    / Charater_bound.size.y;\\r\\n        let hity;\\r\\n        if (average < 0.3)
+    {\\r\\n            hity = HitY.Bottom;\\r\\n        }\\r\\n        else if (average
+    < 0.6) {\\r\\n            hity = HitY.Mid;\\r\\n        }\\r\\n        else {\\r\\n           
+    hity = HitY.Top;\\r\\n        }\\r\\n        return hity;\\r\\n    }\\r\\n   
+    GetHitZ(col) {\\r\\n        let Charater_bound = this.m_Controller.bounds;\\r\\n       
+    let Collider_bound = col.bounds;\\r\\n        let minZ = UnityEngine_1.Mathf.Max(Charater_bound.min.z,
+    Collider_bound.min.z);\\r\\n        let maxZ = UnityEngine_1.Mathf.Min(Charater_bound.max.z,
+    Collider_bound.max.z);\\r\\n        let average = ((minZ + maxZ) / 2 - Charater_bound.min.z)
+    / Charater_bound.size.z;\\r\\n        let hitz;\\r\\n        if (average < 0.3)
+    {\\r\\n            hitz = HitZ.Backward;\\r\\n        }\\r\\n        else if
+    (average < 0.6) {\\r\\n            hitz = HitZ.Mid;\\r\\n        }\\r\\n       
+    else {\\r\\n            hitz = HitZ.Foward;\\r\\n        }\\r\\n        return
+    hitz;\\r\\n    }\\r\\n    Death(hitY, hitZ) {\\r\\n        if (hitZ == HitZ.Foward)
+    {\\r\\n            if (hitY == HitY.Mid) {\\r\\n                this.playerSound.PlayDeadSound();\\r\\n               
+    this.manger.SetAlive(false);\\r\\n                this.m_Animator.Play(\\\"HitMid\\\");\\r\\n               
+    this.gameOverScore.SetGameOverScore();\\r\\n                this.gameOverScore.RankingUpdate();\\r\\n               
+    console.log(\\\"MID\\\");\\r\\n            }\\r\\n            else if (hitY ==
+    HitY.Bottom) {\\r\\n                return;\\r\\n            }\\r\\n           
+    else if (hitY == HitY.Top) {\\r\\n                this.playerSound.PlayDeadSound();\\r\\n               
+    this.manger.SetAlive(false);\\r\\n                this.m_Animator.Play(\\\"HitTop\\\");\\r\\n               
+    this.gameOverScore.SetGameOverScore();\\r\\n                this.gameOverScore.RankingUpdate();\\r\\n               
+    console.log(\\\"Top\\\");\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n   
+    SideHit(hitX, hitZ, hitY) {\\r\\n        //console.log(hitX, hitY, hitZ);\\r\\n       
+    if (hitY == HitY.Bottom) {\\r\\n            return;\\r\\n        }\\r\\n       
+    if (hitZ == HitZ.Mid) {\\r\\n            if (hitX == HitX.Right || hitX == HitX.Left)
+    {\\r\\n                this.playerSound.PlaySideHitSound();\\r\\n               
+    this.m_Animator.Play(\\\"MoveRunFast\\\");\\r\\n                this.m_Animator.SetLayerWeight(1,
+    1);\\r\\n                this.m_Animator.Play(\\\"Stumble\\\");\\r\\n               
+    this.StartCoroutine(this.Doroutine());\\r\\n                this.m_moveScript.RewindSide();\\r\\n           
+    }\\r\\n        }\\r\\n    }\\r\\n    *Doroutine() {\\r\\n        yield new UnityEngine_1.WaitForSeconds(1);\\r\\n       
+    this.m_Animator.SetLayerWeight(1, 0);\\r\\n    }\\r\\n}\\r\\nexports.default
+    = CollisionCheck;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ29sbGlzaW9uQ2hlY2suanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJDb2xsaXNpb25DaGVjay50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQVlxQjtBQUNyQixpREFBc0Q7QUFDdEQsbURBQTRDO0FBQzVDLG1EQUE0QztBQUM1Qyx1Q0FBZ0M7QUFDaEMsK0NBQXdDO0FBRXhDLElBQUssSUFLSjtBQUxELFdBQUssSUFBSTtJQUNQLCtCQUFJLENBQUE7SUFDSiw2QkFBRyxDQUFBO0lBQ0gsaUNBQUssQ0FBQTtJQUNMLCtCQUFJLENBQUE7QUFDTixDQUFDLEVBTEksSUFBSSxLQUFKLElBQUksUUFLUjtBQUNELElBQUssSUFLSjtBQUxELFdBQUssSUFBSTtJQUNQLDZCQUFHLENBQUE7SUFDSCw2QkFBRyxDQUFBO0lBQ0gsbUNBQU0sQ0FBQTtJQUNOLCtCQUFJLENBQUE7QUFDTixDQUFDLEVBTEksSUFBSSxLQUFKLElBQUksUUFLUjtBQUNELElBQUssSUFLSjtBQUxELFdBQUssSUFBSTtJQUNQLG1DQUFNLENBQUE7SUFDTiw2QkFBRyxDQUFBO0lBQ0gsdUNBQVEsQ0FBQTtJQUNSLCtCQUFJLENBQUE7QUFDTixDQUFDLEVBTEksSUFBSSxLQUFKLElBQUksUUFLUjtBQUdELE1BQXFCLGNBQWUsU0FBUSxxQ0FBcUI7SUFBakU7O1FBU0UsS0FBSztRQUNFLFNBQUksR0FBUyxJQUFJLENBQUMsSUFBSSxDQUFDO1FBQ3ZCLFNBQUksR0FBUyxJQUFJLENBQUMsSUFBSSxDQUFDO1FBQ3ZCLFNBQUksR0FBUyxJQUFJLENBQUMsSUFBSSxDQUFDO0lBeUhoQyxDQUFDO0lBdEhDLEtBQUs7UUFDSCxJQUFJLENBQUMsWUFBWSxHQUFHLElBQUksQ0FBQyxVQUFVLENBQUMsWUFBWSxTQUFDLGlDQUFtQixFQUFHLENBQUM7UUFDeEUsSUFBSSxDQUFDLFVBQVUsR0FBRyxJQUFJLENBQUMsVUFBVSxDQUFDLHNCQUFzQixTQUFDLHNCQUFRLEVBQUcsQ0FBQztR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\",\"assetPath\":\"Assets/Script/CollisionCheck.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"\",\"name\":\"hitX\",\"type\":\"HitX\",\"isArray\":false,\"initValue\":[\"None\"],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"\",\"name\":\"hitY\",\"type\":\"HitY\",\"isArray\":false,\"initValue\":[\"None\"],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"\",\"name\":\"hitZ\",\"type\":\"HitZ\",\"isArray\":false,\"initValue\":[\"None\"],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]}],\"name\":\"CollisionCheck\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 428de0e09dbd972d6d78c91042bd723a

@@ -1,0 +1,207 @@
+[World Settings]
+world id             com.lolsum.dash     
+version              0.1                 
+max clients          8                   
+orientation          vertical            
+disable invite       false               
+disable room list    false               
+disable private room false               
+
+[Build Manifest]
+[scenes]
+324 kb               assets/game.unity   
+[assets]
+13 kb                packages/zepeto.character.controller/runtime/_resources/images/touchpad_handle_base.png
+2 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_off.anim
+2 kb                 assets/simple city plain/mesh/materials/door_01.mat
+521 kb               assets/sound/movesound/dm-cgs-09.wav
+2 kb                 assets/brokenvector/lowpolycarpack/materials/pbr/car_rubber.mat
+169 kb               assets/fbx/roadfence_01.fbx
+15 kb                assets/prefabs/obstacle/1/bus_green (1).prefab
+1 kb                 assets/simple city plain/material & texture/colors_buildings/a3.mat
+3 kb                 assets/fbx/obstacle1/roadfence_01 (1).prefab
+2 kb                 packages/zepeto.buildit.common/common/cooltime_commons/data/texture/materials/display_01.mat
+1 kb                 assets/simple city plain/material & texture/colors_buildings/k7.mat
+2 kb                 assets/simple city plain/mesh/materials/facade_01.mat
+35 kb                packages/zepeto.character.controller/runtime/_resources/inputactions/zepetoinputcontrol.inputactions
+237 kb               assets/prefabs/level/level3.prefab
+2 kb                 assets/simple city plain/mesh/materials/door 2.mat
+161 kb               assets/freebuttonset/fonts/poppins-mediumitalic.ttf
+1 kb                 assets/simple city plain/material & texture/colors_buildings/b1.mat
+87 kb                packages/com.unity.textmeshpro/editor resources/gizmos/tmp - text component icon.psd
+600 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/landingslight.anim
+2 kb                 assets/simple city plain/mesh/materials/door_03.mat
+62 kb                packages/zepeto.character.controller/runtime/_resources/animations/base/action1.anim
+14 kb                assets/brokenvector/lowpolycarpack/prefabs/bus_green.prefab
+2 kb                 assets/simple city plain/mesh/materials/surface.mat
+2 kb                 assets/aurynsky/gems ultimate pack/materials/material.mat
+805 kb               assets/fbx/gift store.fbx
+2 kb                 assets/brokenvector/lowpolycarpack/materials/pbr/car_lamps.mat
+3 kb                 assets/fbx/obstacle1/roadfence_03.prefab
+2 kb                 assets/simple city plain/mesh/materials/roof.001.mat
+2 kb                 assets/simple city plain/mesh/materials/fire_escape_04.mat
+5 mb                 assets/fbx/bakery (1).fbx
+2 kb                 assets/simple city plain/mesh/materials/window_frames.001.mat
+3 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_ziggle.anim
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/walk.anim
+2 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_on.anim
+17 kb                packages/zepeto.buildit.common/common/cooltime_commons/data/texture/display_01.png
+2 kb                 assets/simple city plain/mesh/materials/door 1.mat
+16 mb                assets/cartoon textures/diffusemaps/ash.png
+2 mb                 assets/animation/hittop.fbx
+1 mb                 assets/animation/fal.fbx
+1 kb                 assets/simple city plain/material & texture/colors_buildings/j1.mat
+3 kb                 assets/fbx/obstacle1/black earth.prefab
+32 mb                assets/font/b612mono-regular sdf.asset
+2 kb                 assets/simple city plain/mesh/materials/fire_escape_02.mat
+12 kb                assets/fbx/obstacle1/buildings/bag shop.prefab
+2 mb                 assets/animation/hit5.fbx
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/jump_move.anim
+14 kb                assets/brokenvector/lowpolycarpack/palettes/palette_yellow.png
+27 kb                packages/zepeto.character.controller/runtime/_resources/prefabs/uicontroller_touchpad_horizontal.prefab
+2 kb                 assets/animation/beta_joints_mat.mat
+7 kb                 packages/zepeto.character.controller/runtime/_resources/animatorcontroller/uicontrollertouchpadhandleorigin.controller
+546 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/landingroll.anim
+2 kb                 assets/simple city plain/mesh/materials/grid.mat
+2 kb                 assets/brokenvector/lowpolycarpack/materials/pbr/car_paint_blue.mat
+458 kb               assets/cartoon textures/normalmaps/ash_n.png
+62 kb                packages/zepeto.character.controller/runtime/_resources/animations/base/action2.anim
+220 kb               assets/prefabs/level/level1.prefab
+27 kb                packages/zepeto.character.controller/runtime/_resources/prefabs/uicontroller_touchpad_vertical.prefab
+2 mb                 assets/animation/hit1.fbx
+2 kb                 assets/brokenvector/lowpolycarpack/materials/pbr/car_paint_green.mat
+1 kb                 packages/com.unity.inputsystem/inputsystem/editor/icons/inputsystemuiinputmodule@64.png
+137 kb               assets/freebuttonset/fonts/poppins-bold.ttf
+7 kb                 packages/zepeto.character.controller/runtime/_resources/animatorcontroller/uicontrollertouchpadhandle.controller
+16 mb                assets/cartoon textures/diffusemaps/squarepavementgrey.png
+451 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/jumpdash.anim
+1 mb                 assets/animation/falling.fbx
+3 mb                 assets/fbx/bag shop.fbx
+157 kb               assets/prefabs/level/map.prefab
+461 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/movewalkfast.anim
+7 kb                 assets/fbx/obstacle1/buildings/bus stop (1).prefab
+44 kb                assets/animation/animationc1.controller
+3 kb                 packages/zepeto.character.controller/runtime/_resources/prefabs/shadow/charactershadow.prefab
+195 b                assets/brokenvector/lowpolycarpack/palettes/palette_green.png
+4 mb                 assets/fbx/coffe shop (1).fbx
+1 kb                 assets/simple city plain/material & texture/colors_buildings/k9.mat
+12 kb                packages/zepeto.character.controller/runtime/_resources/images/touchpad_jump_base.png
+442 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/jumpmove.anim
+132 kb               assets/font/b612_mono/b612mono-bold.ttf
+2 kb                 assets/simple city plain/mesh/materials/fire_escape_01.mat
+2 kb                 assets/simple city plain/mesh/materials/window_board.mat
+260 kb               assets/simple city plain/mesh/building_a1.fbx
+2 kb                 assets/aurynsky/gems ultimate pack/materials/blank.mat
+2 kb                 assets/simple city plain/mesh/materials/door_05.mat
+62 kb                packages/zepeto.character.controller/runtime/_resources/animations/base/gesture.anim
+18 kb                packages/zepeto.character.controller/runtime/_resources/animatorcontroller/zepetoanimator.controller
+2 kb                 assets/simple city plain/mesh/materials/congregate.mat
+11 kb                assets/brokenvector/lowpolycarpack/prefabs/bus_yellow.prefab
+1 mb                 assets/animation/dodge.fbx
+2 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_origin_on.anim
+2 mb                 assets/animation/hitbottom.fbx
+259 kb               assets/prefabs/level/level2.prefab
+1 mb                 assets/animation/left strafe.fbx
+2 kb                 assets/freebuttonset/textures/buttons/button_100.png
+81 kb                assets/sound/vehicle_essentials/vehicle_car/vehicle_car_horns/vehicle_car_horn_interior.wav
+216 kb               assets/prefabs/level/level0.prefab
+51 kb                assets/font/titan_one/titanone-regular.ttf
+560 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/idle.anim
+3 kb                 assets/fbx/obstacle1/roadfence_03 1.prefab
+10 kb                assets/textmesh pro/shaders/tmp_sdf.shader
+2 kb                 assets/simple city plain/mesh/materials/roof 2.mat
+2 kb                 assets/brokenvector/lowpolycarpack/materials/pbr/car_windows.mat
+2 kb                 assets/cartoon textures/diffusemaps/materials/squarepavementgrey.mat
+2 kb                 assets/simple city plain/mesh/materials/roof 1.mat
+2 kb                 assets/simple city plain/mesh/materials/window frames.mat
+88 kb                assets/fbx/cone_01.fbx
+208 b                assets/brokenvector/lowpolycarpack/palettes/palette_blue.png
+2 mb                 assets/animation/sliding.fbx
+364 b                assets/animation/upperbody.mask
+2 mb                 assets/animation/hitmid.fbx
+4 kb                 assets/simple city plain/prefabs/building_a1_prefab.prefab
+1 kb                 packages/zepeto.character.controller/runtime/_resources/prefabs/shadow/fxt_blobshadow.png
+7 kb                 assets/simple city plain/prefabs/building_i_2_prefab.prefab
+17 kb                assets/fbx/obstacle1/buildings/cupcake shop (2).prefab
+2 kb                 assets/simple city plain/mesh/materials/fire_escape_03.mat
+1 kb                 assets/simple city plain/material & texture/colors_buildings/a1.mat
+21 kb                assets/fbx/obstacle1/buildings/bakery (1).prefab
+2 kb                 assets/brokenvector/lowpolycarpack/materials/pbr/car_paint_yellow.mat
+3 kb                 assets/prefabs/coin 1.prefab
+242 kb               assets/prefabs/level/level4.prefab
+2 kb                 assets/simple city plain/mesh/materials/stone.mat
+295 kb               packages/zepeto.character.controller/runtime/_resources/animatorcontroller/zepetoanimatorv2.controller
+374 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/moverunfast.anim
+828 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/moveturn.anim
+2 kb                 assets/simple city plain/mesh/materials/window 1.mat
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/gesture/4_ok.anim
+14 kb                assets/aurynsky/gems ultimate pack/models/diamondo5side.fbx
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/v2/landingdeep.anim
+101 kb               packages/com.unity.textmeshpro/editor resources/gizmos/tmp - font asset icon.psd
+416 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/moverun.anim
+565 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/fall_loop.anim
+1 kb                 assets/simple city plain/material & texture/colors_buildings/g2.mat
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/jump_idle.anim
+92 kb                assets/fbx/roadfence_03.fbx
+2 kb                 assets/simple city plain/mesh/materials/window 2.mat
+236 kb               assets/prefabs/level/level5.prefab
+2 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_origin_off.anim
+2 kb                 assets/simple city plain/mesh/materials/railing.mat
+3 kb                 assets/freebuttonset/textures/buttons/button_round_130.png
+301 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/falling.anim
+1 mb                 assets/animation/hit6.fbx
+2 kb                 assets/material/new material.mat
+2 kb                 assets/simple city plain/mesh/materials/windows_02.mat
+9 kb                 assets/fbx/obstacle1/buildings/coffe shop (1).prefab
+257 kb               assets/sound/electric sfx/wav/jingle_win_synth/jingle_win_synth_03.wav
+13 kb                assets/fbx/black earth.fbx
+11 kb                assets/fbx/obstacle1/buildings/gift store.prefab
+5 kb                 packages/zepeto.character.controller/runtime/_resources/images/touchpad_handle_icon.png
+1 kb                 assets/simple city plain/material & texture/colors_buildings/a2.mat
+1 kb                 assets/simple city plain/material & texture/colors_buildings/a.mat
+1 kb                 assets/simple city plain/material & texture/color_windows/windows no light.mat
+618 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/jumpidle.anim
+451 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/stamp.anim
+5 kb                 packages/zepeto.character.controller/runtime/_resources/images/touchpad_jump_icon.png
+1 mb                 assets/animation/hit7.fbx
+3 kb                 assets/fbx/obstacle1/cone_01.prefab
+6 kb                 assets/simple city plain/prefabs/building_i_1_prefab.prefab
+5 kb                 assets/freebuttonset/textures/icons/256x256/arrow_left.png
+2 kb                 assets/simple city plain/mesh/materials/facade_02.mat
+2 kb                 assets/simple city plain/mesh/materials/facade.mat
+38 kb                assets/textmesh pro/examples & extras/fonts/bangers.ttf
+79 kb                assets/simple city plain/mesh/building_i_2.fbx
+1 kb                 packages/zepeto.character.controller/runtime/_resources/camera/zepetocamera.prefab
+940 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/run.anim
+118 kb               assets/font/b612_mono/b612mono-bolditalic.ttf
+133 kb               assets/font/b612_mono/b612mono-regular.ttf
+2 kb                 packages/zepeto.buildit.common/common/world-resource-common/data/[materials]/colortexture_001unlit.mat
+108 kb               assets/sound/movesound/crossbow.wav
+5 kb                 packages/zepeto.buildit.common/common/cooltime_commons/data/builditstandard.shader
+27 kb                packages/zepeto.buildit.common/common/world_commons/data/texture/colortexture_001.png
+2 kb                 assets/simple city plain/mesh/materials/door_04.mat
+2 kb                 assets/simple city plain/mesh/materials/door_02.mat
+2 kb                 assets/animation/asdf1_beta_highlimbsgeosg2.mat
+1 mb                 assets/fbx/cupcake shop (1).fbx
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/v2/movewalk.anim
+183 kb               assets/fbx/bus stop (1).fbx
+2 kb                 packages/zepeto.character.controller/runtime/_resources/prefabs/shadow/fxt_blobshadow.mat
+2 kb                 packages/zepeto.character.controller/runtime/_resources/prefabs/eventsystem.prefab
+1014 kb              packages/zepeto.character.controller/runtime/_resources/animations/base/v2/idle.anim
+1 mb                 packages/zepeto.character.controller/runtime/_resources/animations/base/fall_end.anim
+760 kb               assets/cartoon textures/heightmaps/ash_h.png
+464 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/v2/jumpdouble.anim
+2 kb                 assets/simple city plain/mesh/materials/gold.mat
+428 kb               packages/zepeto.character.controller/runtime/_resources/animations/base/hand_idle_01.anim
+2 kb                 assets/simple city plain/mesh/materials/windows_01.mat
+31 kb                packages/com.unity.inputsystem/inputsystem/plugins/playerinput/defaultinputactions.inputactions
+46 kb                assets/brokenvector/lowpolycarpack/models/bus.fbx
+1 kb                 assets/brokenvector/lowpolyshaders/shaders/lowpolypbrshader.shader
+1 mb                 assets/animation/stumble.fbx
+1 kb                 assets/simple city plain/material & texture/colors_buildings/k10.mat
+85 kb                assets/simple city plain/mesh/building_i_1.fbx
+3 kb                 packages/zepeto.character.controller/runtime/_resources/animations/ui/controller/touchpad_handle_origin_ziggle.anim
+[resources]
+0 b                  assets/textmesh pro/examples & extras/resources
+0 b                  assets/textmesh pro/resources
+[streamingAssets]

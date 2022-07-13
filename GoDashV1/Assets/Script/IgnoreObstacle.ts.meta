@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 4ce6a801c87e3d14a9a2345a2f697bb2
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass IgnoreObstacle extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() { }\r\n    OnCollisionEnter(col)
+    {\r\n        if (col.transform.CompareTag(\"Player\")) {\r\n            UnityEngine_1.GameObject.Destroy(this.gameObject,
+    2);\r\n        }\r\n    }\r\n}\r\nexports.default = IgnoreObstacle;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSWdub3JlT2JzdGFjbGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJJZ25vcmVPYnN0YWNsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUE4RTtBQUM5RSxpREFBc0Q7QUFFdEQsTUFBcUIsY0FBZSxTQUFRLHFDQUFxQjtJQUMvRCxLQUFLLEtBQUksQ0FBQztJQUVWLGdCQUFnQixDQUFDLEdBQWM7UUFDN0IsSUFBSSxHQUFHLENBQUMsU0FBUyxDQUFDLFVBQVUsQ0FBQyxRQUFRLENBQUMsRUFBRTtZQUN0Qyx3QkFBVSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsVUFBVSxFQUFFLENBQUMsQ0FBQyxDQUFDO1NBQ3hDO0lBQ0gsQ0FBQztDQUNGO0FBUkQsaUNBUUMifQ==","assetPath":"Assets/Script/IgnoreObstacle.ts","manifest":{"properties":[],"name":"IgnoreObstacle","description":""},"isCompiled":true}'
+  typescriptHash: 40b61b152590c2076baeb608906a6730

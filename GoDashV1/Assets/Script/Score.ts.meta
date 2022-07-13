@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: d40786398c9e5b34f93ff7531679db27
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Manager_1 = require(\"./Manager\");\r\nclass
+    Score extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor() {\r\n       
+    super(...arguments);\r\n        this.score = 0;\r\n        this.nextscore = 0;\r\n   
+    }\r\n    static GetScoreInstance() {\r\n        return this.scoreInstance;\r\n   
+    }\r\n    Awake() {\r\n        Score.scoreInstance = this;\r\n    }\r\n    Start()
+    {\r\n        this.manager = Manager_1.default.GetInstance();\r\n    }\r\n   
+    Update() {\r\n        if (this.manager.GetAlive() && this.manager.GetScoreStart()
+    == true) {\r\n            this.ScoreUp();\r\n        }\r\n    }\r\n    GetCoin()
+    {\r\n        this.score += 1000;\r\n    }\r\n    ScoreUp() {\r\n        this.nextscore
+    = this.score;\r\n        this.score += UnityEngine_1.Time.deltaTime * 1230;\r\n       
+    this.s = UnityEngine_1.Mathf.SmoothStep(this.nextscore, this.score, UnityEngine_1.Time.deltaTime);\r\n       
+    this.s = UnityEngine_1.Mathf.Round(this.s);\r\n        this.scoreText[\"text\"]
+    = this.s.toString();\r\n    }\r\n    ResetScore() {\r\n        this.score = 0;\r\n   
+    }\r\n    GetFinishedScore() {\r\n        return this.s;\r\n    }\r\n}\r\nexports.default
+    = Score;\r\nScore.scoreInstance = null;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU2NvcmUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJTY29yZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFpRTtBQUVqRSxpREFBc0Q7QUFDdEQsdUNBQWdDO0FBRWhDLE1BQXFCLEtBQU0sU0FBUSxxQ0FBcUI7SUFBeEQ7O1FBR1MsVUFBSyxHQUFXLENBQUMsQ0FBQztRQUNsQixjQUFTLEdBQVcsQ0FBQyxDQUFDO0lBNkMvQixDQUFDO0lBckNRLE1BQU0sQ0FBQyxnQkFBZ0I7UUFDNUIsT0FBTyxJQUFJLENBQUMsYUFBYSxDQUFDO0lBQzVCLENBQUM7SUFFRCxLQUFLO1FBQ0gsS0FBSyxDQUFDLGFBQWEsR0FBRyxJQUFJLENBQUM7SUFDN0IsQ0FBQztJQUVELEtBQUs7UUFDSCxJQUFJLENBQUMsT0FBTyxHQUFHLGlCQUFPLENBQUMsV0FBVyxFQUFFLENBQUM7SUFDdkMsQ0FBQztJQUVELE1BQU07UUFDSixJQUFJLElBQUksQ0FBQyxPQUFPLENBQUMsUUFBUSxFQUFFLElBQUksSUFBSSxDQUFDLE9BQU8sQ0FBQyxhQUFhLEVBQUUsSUFBSSxJQUFJLEVBQUU7WUFDbkUsSUFBSSxDQUFDLE9BQU8sRUFBRSxDQUFDO1NBQ2hCO0lBQ0gsQ0FBQztJQUVELE9BQU87UUFDTCxJQUFJLENBQUMsS0FBSyxJQUFJLElBQUksQ0FBQztJQUNyQixDQUFDO0lBRUQsT0FBTztRQUNMLElBQUksQ0FBQyxTQUFTLEdBQUcsSUFBSSxDQUFDLEtBQUssQ0FBQztRQUM1QixJQUFJLENBQUMsS0FBSyxJQUFJLGtCQUFJLENBQUMsU0FBUyxHQUFHLElBQUksQ0FBQztRQUNwQyxJQUFJLENBQUMsQ0FBQyxHQUFHLG1CQUFLLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxTQUFTLEVBQUUsSUFBSSxDQUFDLEtBQUssRUFBRSxrQkFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDO1FBQ3RFLElBQUksQ0FBQyxDQUFDLEdBQUcsbUJBQUssQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDO1FBQzdCLElBQUksQ0FBQyxTQUFTLENBQUMsTUFBTSxDQUFDLEdBQUcsSUFBSSxDQUFDLENBQUMsQ0FBQyxRQUFRLEVBQUUsQ0FBQztJQUM3QyxDQUFDO0lBRUQsVUFBVTtRQUNSLElBQUksQ0FBQyxLQUFLLEdBQUcsQ0FBQyxDQUFDO0lBQ2pCLENBQUM7SUFFRCxnQkFBZ0I7UUFDZCxPQUFPLElBQUksQ0FBQyxDQUFDLENBQUM7SUFDaEIsQ0FBQzs7QUFoREgsd0JBaURDO0FBdkNnQixtQkFBYSxHQUFVLElBQUksQ0FBQyJ9","assetPath":"Assets/Script/Score.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"scoreText","type":"UnityEngine.UI.MaskableGraphic","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"score","type":"System.Single","isArray":false,"initValue":["0"],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"nextscore","type":"System.Single","isArray":false,"initValue":["0"],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"s","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"Score","description":""},"isCompiled":true}'
+  typescriptHash: 2a38989ea583f89bf513ef8abacd922c

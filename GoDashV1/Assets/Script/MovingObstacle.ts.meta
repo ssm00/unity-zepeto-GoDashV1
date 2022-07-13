@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: 5693f95f9574ff34ba896187eab7d8f4
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Manager_1 = require(\"./Manager\");\r\nclass
+    MovingObstacle extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor()
+    {\r\n        super(...arguments);\r\n        this.use = false;\r\n        this.audioPlayed
+    = false;\r\n    }\r\n    static GetMovingOtc() {\r\n        return this.movingOtcInstance;\r\n   
+    }\r\n    Start() {\r\n        this.audioSource = this.gameObject.GetComponent($typeof(UnityEngine_1.AudioSource));\r\n       
+    this.manager = Manager_1.default.GetInstance();\r\n    }\r\n    LateUpdate()
+    {\r\n        this.obstaclePosition = this.gameObject.GetComponent($typeof(UnityEngine_1.Transform)).position;\r\n       
+    this.distance = this.obstaclePosition.z - this.manager.GetPlayerPos().z;\r\n       
+    if (this.distance < 30) {\r\n            this.transform.Translate(UnityEngine_1.Vector3.op_Multiply(UnityEngine_1.Vector3.right,
+    20 * UnityEngine_1.Time.deltaTime));\r\n        }\r\n        if (this.distance
+    < 20 && !this.audioPlayed) {\r\n            this.audioSource.Play();\r\n           
+    this.audioPlayed = true;\r\n        }\r\n    }\r\n}\r\nexports.default = MovingObstacle;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTW92aW5nT2JzdGFjbGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJNb3ZpbmdPYnN0YWNsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFnRztBQUNoRyxpREFBc0Q7QUFDdEQsdUNBQWdDO0FBRWhDLE1BQXFCLGNBQWUsU0FBUSxxQ0FBcUI7SUFBakU7O1FBTVUsUUFBRyxHQUFZLEtBQUssQ0FBQztRQUVyQixnQkFBVyxHQUFZLEtBQUssQ0FBQztJQXdCdkMsQ0FBQztJQXBCUSxNQUFNLENBQUMsWUFBWTtRQUN4QixPQUFPLElBQUksQ0FBQyxpQkFBaUIsQ0FBQztJQUNoQyxDQUFDO0lBRUQsS0FBSztRQUNILElBQUksQ0FBQyxXQUFXLEdBQUcsSUFBSSxDQUFDLFVBQVUsQ0FBQyxZQUFZLFNBQUMseUJBQVcsRUFBRyxDQUFDO1FBQy9ELElBQUksQ0FBQyxPQUFPLEdBQUcsaUJBQU8sQ0FBQyxXQUFXLEVBQUUsQ0FBQztJQUN2QyxDQUFDO0lBRUQsVUFBVTtRQUNSLElBQUksQ0FBQyxnQkFBZ0IsR0FBRyxJQUFJLENBQUMsVUFBVSxDQUFDLFlBQVksU0FBQyx1QkFBUyxHQUFJLFFBQVEsQ0FBQztRQUMzRSxJQUFJLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDLEdBQUcsSUFBSSxDQUFDLE9BQU8sQ0FBQyxZQUFZLEVBQUUsQ0FBQyxDQUFDLENBQUM7UUFDeEUsSUFBSSxJQUFJLENBQUMsUUFBUSxHQUFHLEVBQUUsRUFBRTtZQUN0QixJQUFJLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxxQkFBTyxDQUFDLFdBQVcsQ0FBQyxxQkFBTyxDQUFDLEtBQUssRUFBRSxFQUFFLEdBQUcsa0JBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDO1NBQ25GO1FBQ0QsSUFBSSxJQUFJLENBQUMsUUFBUSxHQUFHLEVBQUUsSUFBSSxDQUFDLElBQUksQ0FBQyxXQUFXLEVBQUU7WUFDM0MsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEVBQUUsQ0FBQztZQUN4QixJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQztTQUN6QjtJQUNILENBQUM7Q0FDRjtBQWhDRCxpQ0FnQ0MifQ==","assetPath":"Assets/Script/MovingObstacle.ts","manifest":{"properties":[],"name":"MovingObstacle","description":""},"isCompiled":true}'
+  typescriptHash: 767fba42fb053253eb6668298493b6e3

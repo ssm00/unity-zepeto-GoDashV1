@@ -1,0 +1,45 @@
+fileFormatVersion: 2
+guid: a78084b0121d3944f98f3a840dd01628
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Manager_1 = require(\"./Manager\");\r\nclass
+    TileManager extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor()
+    {\r\n        super(...arguments);\r\n        this.tileLength = 80;\r\n       
+    this.numberTile = 4;\r\n    }\r\n    static GetTileManager() {\r\n        return
+    this.tileManager;\r\n    }\r\n    Awake() {\r\n        TileManager.tileManager
+    = this;\r\n    }\r\n    Start() {\r\n        this.activeTile = [];\r\n       
+    this.manager = Manager_1.default.GetInstance();\r\n    }\r\n    Initialize()
+    {\r\n        this.cnt = 0;\r\n        this.deletecnt = 0;\r\n        this.zSpawn
+    = 120;\r\n        try {\r\n            for (let i = 0; i < 4; i++) {\r\n               
+    this.SpwanTile(UnityEngine_1.Mathf.Round(UnityEngine_1.Random.Range(0, this.tilePrefabs.length)));\r\n           
+    }\r\n        }\r\n        catch (err) {\r\n            this.Initialize();\r\n       
+    }\r\n    }\r\n    Update() {\r\n        if (this.manager.GetPlayerPos().z - 60
+    > this.zSpawn - this.numberTile * this.tileLength) {\r\n            this.SpwanTile(UnityEngine_1.Mathf.Round(UnityEngine_1.Random.Range(0,
+    this.tilePrefabs.length)));\r\n            this.DeleteTile();\r\n        }\r\n   
+    }\r\n    SpwanTile(tileIndex) {\r\n        this.gObject = UnityEngine_1.GameObject.Instantiate(this.tilePrefabs[tileIndex],
+    new UnityEngine_1.Vector3(0, 0, 1 * this.zSpawn), this.transform.rotation);\r\n       
+    this.zSpawn += this.tileLength;\r\n        this.activeTile[this.cnt] = this.gObject;\r\n       
+    this.cnt++;\r\n    }\r\n    DeleteTile() {\r\n        UnityEngine_1.GameObject.Destroy(this.activeTile[this.deletecnt]);\r\n       
+    this.deletecnt++;\r\n    }\r\n    RestartTile() {\r\n        for (let i = 0;
+    i < this.activeTile.length; i++) {\r\n            UnityEngine_1.GameObject.Destroy(this.activeTile[this.deletecnt]);\r\n           
+    this.deletecnt++;\r\n        }\r\n        this.Initialize();\r\n    }\r\n}\r\nexports.default
+    = TileManager;\r\nTileManager.tileManager = null;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGlsZU1hbmFnZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUaWxlTWFuYWdlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUF5RjtBQUN6RixpREFBc0Q7QUFDdEQsdUNBQWdDO0FBRWhDLE1BQXFCLFdBQVksU0FBUSxxQ0FBcUI7SUFBOUQ7O1FBS1UsZUFBVSxHQUFXLEVBQUUsQ0FBQztRQUN4QixlQUFVLEdBQVcsQ0FBQyxDQUFDO0lBK0RqQyxDQUFDO0lBeERRLE1BQU0sQ0FBQyxjQUFjO1FBQzFCLE9BQU8sSUFBSSxDQUFDLFdBQVcsQ0FBQztJQUMxQixDQUFDO0lBQ0QsS0FBSztRQUNILFdBQVcsQ0FBQyxXQUFXLEdBQUcsSUFBSSxDQUFDO0lBQ2pDLENBQUM7SUFFRCxLQUFLO1FBQ0gsSUFBSSxDQUFDLFVBQVUsR0FBRyxFQUFFLENBQUM7UUFDckIsSUFBSSxDQUFDLE9BQU8sR0FBRyxpQkFBTyxDQUFDLFdBQVcsRUFBRSxDQUFDO0lBQ3ZDLENBQUM7SUFFRCxVQUFVO1FBQ1IsSUFBSSxDQUFDLEdBQUcsR0FBRyxDQUFDLENBQUM7UUFDYixJQUFJLENBQUMsU0FBUyxHQUFHLENBQUMsQ0FBQztRQUNuQixJQUFJLENBQUMsTUFBTSxHQUFHLEdBQUcsQ0FBQztRQUNsQixJQUFHO1lBQ0QsS0FBSyxJQUFJLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDLEVBQUUsRUFBRTtnQkFDMUIsSUFBSSxDQUFDLFNBQVMsQ0FBQyxtQkFBSyxDQUFDLEtBQUssQ0FBQyxvQkFBTSxDQUFDLEtBQUssQ0FBQyxDQUFDLEVBQUUsSUFBSSxDQUFDLFdBQVcsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDLENBQUM7YUFDdkU7U0FDRjtRQUFBLE9BQU0sR0FBRyxFQUFDO1lBQ1QsSUFBSSxDQUFDLFVBQVUsRUFBRSxDQUFDO1NBQ25CO0lBQ0gsQ0FBQztJQUVELE1BQU07UUFDSixJQUFJLElBQUksQ0FBQyxPQUFPLENBQUMsWUFBWSxFQUFFLENBQUMsQ0FBQyxHQUFHLEVBQUUsR0FBRyxJQUFJLENBQUMsTUFBTSxHQUFHLElBQUksQ0FBQyxVQUFVLEdBQUcsSUFBSSxDQUFDLFVBQVUsRUFBRTtZQUN4RixJQUFJLENBQUMsU0FBUyxDQUFDLG1CQUFLLENBQUMsS0FBSyxDQUFDLG9CQUFNLENBQUMsS0FBSyxDQUFDLENBQUMsRUFBRSxJQUFJLENBQUMsV0FBVyxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUMsQ0FBQztZQUN0RSxJQUFJLENBQUMsVUFBVSxFQUFFLENBQUM7U0FDbkI7SUFDSCxDQUFDO0lBRUQsU0FBUyxDQUFDLFNBQWlCO1FBQ3pCLElBQUksQ0FBQyxPQUFPLEdBQUcsd0JBQVUsQ0FBQyxXQUFXLENBQ25DLElBQUksQ0FBQyxXQUFXLENBQUMsU0FBUyxDQUFDLEVBQzNCLElBQUkscUJBQU8sQ0FBQyxDQUFDLEVBQUUsQ0FBQyxFQUFFLENBQUMsR0FBRyxJQUFJLENBQUMsTUFBTSxDQUFDLEVBQ2xDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUN4QixDQUFDO1FBQ0YsSUFBSSxDQUFDLE1BQU0sSUFBSSxJQUFJLENBQUMsVUFBVSxDQUFDO1FBQy9CLElBQUksQ0FBQyxVQUFVLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxHQUFHLElBQUksQ0FBQyxPQUFPLENBQUM7UUFDekMsSUFBSSxDQUFDLEdBQUcsRUFBRSxDQUFDO0lBQ2IsQ0FBQztJQUVELFVBQVU7UUFDUix3QkFBVSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDO1FBQ3BELElBQUksQ0FBQyxTQUFTLEVBQUUsQ0FBQztJQUNuQixDQUFDO0lBRUQsV0FBVztRQUNULEtBQUssSUFBSSxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUMsR0FBRyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sRUFBRSxDQUFDLEVBQUUsRUFBRTtZQUMvQyx3QkFBVSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDO1lBQ3BELElBQUksQ0FBQyxTQUFTLEVBQUUsQ0FBQztTQUNsQjtRQUNELElBQUksQ0FBQyxVQUFVLEVBQUUsQ0FBQztJQUNwQixDQUFDOztBQW5FSCw4QkFxRUM7QUF6RGdCLHVCQUFXLEdBQWdCLElBQUksQ0FBQyJ9","assetPath":"Assets/Script/TileManager.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"tilePrefabs","type":"UnityEngine.GameObject[]","isArray":true,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"TileManager","description":""},"isCompiled":true}'
+  typescriptHash: d97215fadba165ab7d5aaf1abd8fc90c

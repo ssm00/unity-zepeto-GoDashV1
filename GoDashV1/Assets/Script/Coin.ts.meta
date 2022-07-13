@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 50fe591f1038c234a8ec170cffd9cbd4
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst Score_1 = require(\"./Score\");\r\nclass
+    Coin extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor() {\r\n       
+    super(...arguments);\r\n        this.audioCheck = false;\r\n    }\r\n    Start()
+    {\r\n        this.score = Score_1.default.GetScoreInstance();\r\n    }\r\n   
+    OnTriggerEnter(col) {\r\n        if (col.transform.CompareTag(\"Player\")) {\r\n           
+    if (!this.audioCheck) {\r\n                UnityEngine_1.AudioSource.PlayClipAtPoint(this.coinSound,
+    this.transform.position);\r\n                this.audioCheck = true;\r\n           
+    }\r\n            //CoinMovement\r\n            UnityEngine_1.GameObject.Destroy(this.gameObject);\r\n           
+    this.score.GetCoin();\r\n        }\r\n        else {\r\n            return;\r\n       
+    }\r\n    }\r\n    CoinMovement() { }\r\n}\r\nexports.default = Coin;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ29pbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNvaW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBNEU7QUFDNUUsaURBQXNEO0FBQ3RELG1DQUE0QjtBQUU1QixNQUFxQixJQUFLLFNBQVEscUNBQXFCO0lBQXZEOztRQUVVLGVBQVUsR0FBWSxLQUFLLENBQUM7SUFzQnRDLENBQUM7SUFuQkMsS0FBSztRQUNILElBQUksQ0FBQyxLQUFLLEdBQUcsZUFBSyxDQUFDLGdCQUFnQixFQUFFLENBQUM7SUFDeEMsQ0FBQztJQUVELGNBQWMsQ0FBQyxHQUFjO1FBQzNCLElBQUksR0FBRyxDQUFDLFNBQVMsQ0FBQyxVQUFVLENBQUMsUUFBUSxDQUFDLEVBQUU7WUFDdEMsSUFBSSxDQUFDLElBQUksQ0FBQyxVQUFVLEVBQUU7Z0JBQ3BCLHlCQUFXLENBQUMsZUFBZSxDQUFDLElBQUksQ0FBQyxTQUFTLEVBQUUsSUFBSSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQztnQkFDckUsSUFBSSxDQUFDLFVBQVUsR0FBRyxJQUFJLENBQUM7YUFDeEI7WUFDRCxjQUFjO1lBQ2Qsd0JBQVUsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxDQUFDO1lBQ3BDLElBQUksQ0FBQyxLQUFLLENBQUMsT0FBTyxFQUFFLENBQUM7U0FDdEI7YUFBTTtZQUNMLE9BQU87U0FDUjtJQUNILENBQUM7SUFFRCxZQUFZLEtBQUksQ0FBQztDQUNsQjtBQXhCRCx1QkF3QkMifQ==","assetPath":"Assets/Script/Coin.ts","manifest":{"properties":[{"assembly":"UnityEngine.AudioModule","name":"coinSound","type":"UnityEngine.AudioClip","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"Coin","description":""},"isCompiled":true}'
+  typescriptHash: 655c681ada842dee05d129a042e49e9f
