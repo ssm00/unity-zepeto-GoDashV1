@@ -4,9 +4,11 @@
 <br/>
 <br/>
 <br/>
-
-![3](https://user-images.githubusercontent.com/97657265/181144416-8899a976-c9c5-4d7a-b6a8-845a355933cd.PNG)\
 <br/>
+<br/>
+<br/>
+<br/>
+![3](https://user-images.githubusercontent.com/97657265/181144416-8899a976-c9c5-4d7a-b6a8-845a355933cd.PNG)\
 <img width="640" alt="0" src="https://user-images.githubusercontent.com/97657265/181144838-0973f4b7-0f4e-43af-bf73-fa98e1696362.png">
 <br/>
 <img width="640" alt="0-2" src="https://user-images.githubusercontent.com/97657265/181144848-0f6ce4f1-0a7a-4440-91a4-83b423cf5644.png">
@@ -53,7 +55,7 @@
 <br/>
 하는동안은 기간이 촉박하니 힘들고 스트레스를 받았는데 끝나고 나니까 오히려 아쉬움이 남는다
 조금더 여유가 있었다면 어땠을까, 여러가지 게임들이 떠올랐는데 다른게임을 만들었다면 어땠을까 등등
-어찌됐건 끝났으니 그런아쉬움은 여기에 다 털고 앞으로 무얼할지 고민을 해봐야겠다.
+어찌됐건 끝났으니 그런아쉬움은 여기에 남기고 앞으로 무얼할지 고민을 해봐야겠다.
 유니티를 배우면서 게임뿐만아니라 정말 다양한 분야에 사용할수 있겠다는 생각이든다.
 게임을 만드는건 취미정도로만 배우려 했는데 조금더 심도있게 배워봐도 좋을것 같다.
   
