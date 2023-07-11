@@ -8,10 +8,14 @@
 <br/>
 <br/>
 <br/>
-![3](https://user-images.githubusercontent.com/97657265/181144416-8899a976-c9c5-4d7a-b6a8-845a355933cd.PNG)\
-<img width="640" alt="0" src="https://user-images.githubusercontent.com/97657265/181144838-0973f4b7-0f4e-43af-bf73-fa98e1696362.png">
+
+<img width="360" alt="2" src="https://github.com/ssm00/unity-zepeto-GoDashV1/assets/97657265/a0982a5d-ae0f-4c24-820b-fd48c9f9acf2">
+<img width="360" alt="3" src="https://github.com/ssm00/unity-zepeto-GoDashV1/assets/97657265/f21893bc-24a2-4daf-ad06-000dd2ed3a4d">
+<img width="360" alt="1" src="https://github.com/ssm00/unity-zepeto-GoDashV1/assets/97657265/732a837a-96ee-4d1b-926e-155a923f4e79">
+
+
 <br/>
-<img width="640" alt="0-2" src="https://user-images.githubusercontent.com/97657265/181144848-0f6ce4f1-0a7a-4440-91a4-83b423cf5644.png">
+
   <br/>
   <br/>
   <br/>
